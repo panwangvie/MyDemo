@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPing", "MyPing\MyPing.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopFiled", "StopFiled\StopFiled.csproj", "{BCFFECC1-4558-412F-96C4-2B5767E713EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.IOC.NetCore", "WPF.IOC.NetCore\WPF.IOC.NetCore.csproj", "{72772888-0A3B-4B51-8191-D24A11088F71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF.IOC.NetCore", "WPF.IOC.NetCore\WPF.IOC.NetCore.csproj", "{72772888-0A3B-4B51-8191-D24A11088F71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCoreApi", "MyCoreApi\MyCoreApi.csproj", "{7C179EAF-1D4F-4219-B554-E70F10EC7572}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{72772888-0A3B-4B51-8191-D24A11088F71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72772888-0A3B-4B51-8191-D24A11088F71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72772888-0A3B-4B51-8191-D24A11088F71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C179EAF-1D4F-4219-B554-E70F10EC7572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C179EAF-1D4F-4219-B554-E70F10EC7572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C179EAF-1D4F-4219-B554-E70F10EC7572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C179EAF-1D4F-4219-B554-E70F10EC7572}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
