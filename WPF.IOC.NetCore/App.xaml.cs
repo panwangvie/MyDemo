@@ -29,8 +29,11 @@ namespace WPF.IOC.NetCore
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<ITextService>(provider => new TextService("Hi WPF .NET Core 3.0"));
+            services.AddSingleton<ITextService,TextService> (provider => new TextService("Hi WPF .NET Core 3.0"));
+            
             services.AddSingleton<MainWindow>();
+
+            services.AddScoped<IScopedText, ScopedText>();
         }
 
         protected override void OnStartup(StartupEventArgs e)

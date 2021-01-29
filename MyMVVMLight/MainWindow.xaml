@@ -1,0 +1,106 @@
+﻿<Window x:Class="MyMVVMLight.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        DataContext="{Binding Source={StaticResource Locator},Path=Main}"
+        xmlns:local="clr-namespace:MyMVVMLight"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="679.5" Width="910">
+    <Window.Resources>
+
+        <SolidColorBrush x:Key="BorderBrush">Red</SolidColorBrush>
+
+    </Window.Resources>
+    <Grid>
+        <TabControl>
+            <TabItem Header="MVVM">
+                <StackPanel>
+
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" >
+
+                        <TextBox x:Name="WelcomeText" Width="200" Margin="10,10,0,0"></TextBox>
+
+                        <TextBlock Text="{Binding ElementName=WelcomeText,Path=Text,StringFormat='Hello \{0\}'}" Margin="10,10,0,0"></TextBlock>
+
+                    </StackPanel>
+
+                    <StackPanel VerticalAlignment="Center" >
+                        <TextBlock Text="{Binding Welcome.Introduction}" FontSize="30" ></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel>
+
+                        <Label Content="用户电话" Target="{Binding ElementName=UserPhone}"/>
+
+                        <TextBox Width="150" Text="{Binding UserPhone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                        <TextBox Width="150" Text="{Binding UserPhone,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                    </StackPanel>
+                    <StackPanel Margin="10,50,0,0" Orientation="Vertical" >
+
+                        <TextBlock Text="{Binding Source={x:Static SystemFonts.IconFontFamily},Path=Source}" ></TextBlock>
+
+                        <TextBlock Text="{Binding Source={StaticResource BorderBrush}}" Foreground="{Binding Source={StaticResource BorderBrush}}"  ></TextBlock>
+
+                    </StackPanel>
+
+                    <StackPanel Margin="10,50,0,0" Orientation="Vertical" ToolTip="top" >
+
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Width="150" Text="获取自身宽度:"  ></TextBlock>
+                            <TextBlock Width="200" Text="{Binding Path=Width,RelativeSource={RelativeSource Mode=Self}}" ></TextBlock>
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal" ToolTip="parent" >
+                            <TextBlock Width="150" Text="查找上一层ToolTip:" ></TextBlock>
+                            <TextBlock Text="{Binding Path=ToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type StackPanel}}}"></TextBlock>
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="150" Text="查找上二层ToolTip:" ></TextBlock>
+                            <TextBlock Text="{Binding Path=ToolTip,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type StackPanel},AncestorLevel=2}}"></TextBlock>
+                        </StackPanel>
+
+
+
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="绑定">
+                <StackPanel>
+                <StackPanel Margin="10,20,0,50">
+                    <TextBlock Text="下拉框" FontWeight="Bold" FontSize="12" Margin="0,5,0,5" ></TextBlock>
+                    <DockPanel x:Name="Combbox" >
+                        <StackPanel DockPanel.Dock="Left" Width="240">
+                            <ComboBox Width="200" HorizontalAlignment="Left" ItemsSource="{Binding CombboxList}" SelectedItem="{Binding CombboxItem}" DisplayMemberPath="Text" SelectedValuePath="Key" ></ComboBox>
+                        </StackPanel>
+
+                        <StackPanel DockPanel.Dock="Right" Width="240" Orientation="Horizontal" DataContext="{Binding CombboxItem}" >
+                            <TextBlock Text="{Binding Key,StringFormat='结果：\{0\}'}" Margin="0,0,15,0" ></TextBlock>
+                            <TextBlock Text="{Binding Text}"></TextBlock>
+                        </StackPanel>
+
+                    </DockPanel>
+                </StackPanel>
+                    <StackPanel Margin="10,0,0,50">
+                        <TextBlock Text="单选框" FontWeight="Bold" FontSize="12" Margin="0,5,0,5" ></TextBlock>
+                        <DockPanel x:Name="RadioButton" >
+                            <StackPanel DockPanel.Dock="Left" Width="240">
+                                <RadioButton Content="{Binding SingleRadio}" IsChecked="{Binding IsSingleRadioCheck}" HorizontalAlignment="Right" Width="240" >
+                                </RadioButton>
+                            </StackPanel>
+                            <StackPanel DockPanel.Dock="Right" Width="240" Orientation="Horizontal">
+                                <TextBlock Text="{Binding IsSingleRadioCheck,StringFormat='结果：\{0\}'}" ></TextBlock>
+                            </StackPanel>
+                        </DockPanel>
+                    </StackPanel>
+
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Window>
