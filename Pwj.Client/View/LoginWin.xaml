@@ -1,0 +1,84 @@
+﻿<Window x:Class="Pwj.Client.View.LoginWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+         xmlns:local="clr-namespace:Pwj.Client.View" 
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:i1="http://schemas.microsoft.com/expression/2010/interactivity"
+        WindowStartupLocation="CenterScreen"
+         WindowStyle="None"
+        mc:Ignorable="d"
+        Title="Welcome" Height="480" Width="450">
+    
+    <md:DialogHost Identifier="Root">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="35"
+                        FontWeight="Bold"
+                        Text="WELCOME" />
+                    <TextBlock
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="35"
+                        Text="WPF" />
+
+                    <Button HorizontalAlignment="Right" Margin="70 0 0 20" Height="60" Width="60"
+                             Style="{StaticResource MaterialDesignIconButton}"
+                             ToolTip="MaterialDesignIconButton" 
+                             Command="{Binding ExitCommand}"
+                            >
+                        <md:PackIcon Width="50" Height="50" Kind="Close"/>
+                    </Button>
+                </StackPanel>
+
+                <TextBox Grid.Row="1"
+                         Margin="40 0 20 0"
+                         VerticalAlignment="Center"
+                         Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                         md:HintAssist.Hint="Account"
+                         FontSize="22"
+                         Text="{Binding UserName}"
+                      >
+
+                </TextBox>
+
+                <PasswordBox Grid.Row="2"  Margin="40 0 20 0" VerticalAlignment="Center"
+                             Style="{StaticResource MaterialDesignOutlinedPasswordFieldPasswordBox}"
+                             md:HintAssist.Hint="PassWord"
+                             FontSize="22" Cursor="IBeam"
+                             local:PasswordBoxHelper.Attach="True"
+                             local:PasswordBoxHelper.Password="{Binding PassWord, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             >
+                   
+
+                </PasswordBox>
+
+                <Button Grid.Row="3" Content="登录" Width="200" Height="52"
+                         Style="{StaticResource MaterialDesignRaisedButton}"
+                         md:ButtonProgressAssist.Value="-1"
+                         md:ButtonProgressAssist.IsIndicatorVisible="{Binding DialogIsOpen}"
+                         md:ButtonProgressAssist.IsIndeterminate="True"
+                         FontSize="22"
+                        Command="{Binding LoginCommand}"
+                        >
+
+                </Button>
+
+            </Grid>
+            <md:Snackbar
+                x:Name="SnackbarThree"
+                VerticalAlignment="Bottom"
+                MessageQueue="{md:MessageQueue}" />
+        </Grid>
+    </md:DialogHost>
+</Window>
