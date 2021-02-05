@@ -1,4 +1,7 @@
-﻿using Pwj.Interfaces;
+﻿using GalaSoft.MvvmLight.Messaging;
+using Pwj.Interfaces;
+using Pwj.Shared.Common;
+using Pwj.ViewModel.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +23,7 @@ namespace Pwj.Client.ViewCenter
     {
         public BaseDialogCenter(IBaseDialog viewModel)
         {
-            this.viewModel = viewModel;
+            this.viewModel = viewModel;//(IBaseDialog)viewModel.BaseAop(typeof(IBaseDialog));
         }
 
         public TView view = new TView();
@@ -62,29 +65,30 @@ namespace Pwj.Client.ViewCenter
         public virtual void SubscribeMessenger()
         {
             //最小化
-            //WeakReferenceMessenger.Default.Register<string, string>(this, "WindowMinimize", (sender, arg) =>
-            //{
-            //    view.WindowState = System.Windows.WindowState.Minimized;
-            //});
-            ////最大化
-            //WeakReferenceMessenger.Default.Register<string, string>(this, "WindowMaximize", (sender, arg) =>
-            //{
-            //    if (view.WindowState == System.Windows.WindowState.Maximized)
-            //        view.WindowState = System.Windows.WindowState.Normal;
-            //    else
-            //        view.WindowState = System.Windows.WindowState.Maximized;
-            //});
-            ////关闭系统
-            //WeakReferenceMessenger.Default.Register<string, string>(this, "Exit", async (sender, arg) =>
-            //{
-            //    if (!await Msg.Question("确认退出系统?")) return;
-            //    Environment.Exit(0);
-            //});
+            Messenger.Default.Register<string>(this, "WindowMinimize", (arg) =>
+            {
+                view.WindowState = System.Windows.WindowState.Minimized;
+            });
+            //最大化
+            Messenger.Default.Register<string>(this, "WindowMaximize", (arg) =>
+            {
+                if (view.WindowState == System.Windows.WindowState.Maximized)
+                    view.WindowState = System.Windows.WindowState.Normal;
+                else
+                    view.WindowState = System.Windows.WindowState.Maximized;
+            });
+            //关闭系统
+            Messenger.Default.Register<string>(this, "Exit", async (arg) =>
+            {
+                //if (!await Msg.Question("确认退出系统?"))
+                //    return;
+                Environment.Exit(0);
+            });
         }
 
         public virtual void UnsubscribeMessenger()
         {
-           // WeakReferenceMessenger.Default.UnregisterAll(this);
+           Messenger.Default.Unregister(this);
         }
 
     }

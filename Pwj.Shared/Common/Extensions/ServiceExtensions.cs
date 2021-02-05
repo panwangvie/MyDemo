@@ -17,19 +17,31 @@ namespace Pwj.Shared.Common
     public static class ServiceExtensions
     {
 
-        public static ContainerBuilder AddViewModel<TRepository, IRepository>(this ContainerBuilder services) where TRepository : class
+        public static ContainerBuilder AddViewModel<TRepository, IRepository>(this ContainerBuilder services) where TRepository : class, IRepository
         {
             services.RegisterType<TRepository>().As<IRepository>();
             return services;
         }
 
-        //单接口多实现的时候
-        public static ContainerBuilder AddViewCenter<TCenter, ICenter>(this ContainerBuilder services) where TCenter : class
+        /// <summary>
+        /// 单接口多实现的时候
+        /// </summary>
+        /// <typeparam name="TCenter"></typeparam>
+        /// <typeparam name="ICenter"></typeparam>
+        /// <param name="services"></param>
+        /// <returns></returns>
+        public static ContainerBuilder AddViewCenter<TCenter, ICenter>(this ContainerBuilder services) where TCenter : class, ICenter
         {
             services.RegisterType<TCenter>().Named(typeof(TCenter).Name, typeof(ICenter));
             return services;
         }
 
+        public static ContainerBuilder AddViewService<TRepository, IRepository>(this ContainerBuilder services) where TRepository : class, IRepository
+        {
+            services.RegisterType<TRepository>().As<IRepository>();
+       
+            return services;
+        }
 
     }
 }

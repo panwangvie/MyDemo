@@ -1,5 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
+using Pwj.Shared.Common.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,17 +44,20 @@ namespace Pwj.ViewModel.ViewModel
         /// 通知异常
         /// </summary>
         /// <param name="msg"></param>
+        [TryEx]
+
         public virtual void SnackBar(string msg)
         {
-           // WeakReferenceMessenger.Default.Send(msg, "Snackbar");
+            Messenger.Default.Send(msg, "Snackbar");
         }
 
         /// <summary>
         /// 传递True代表需要确认用户是否关闭,你可以选择传递false强制关闭
         /// </summary>
+        [TryEx]
         public virtual void Exit()
         {
-           // WeakReferenceMessenger.Default.Send("", "Exit");
+            Messenger.Default.Send("", "Exit");
         }
     }
 }

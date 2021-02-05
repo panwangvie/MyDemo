@@ -49,5 +49,14 @@
     <Compile Include="IOrdinary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pwj.Shared\Pwj.Shared.csproj">
+      <Project>{b06f75f9-8475-4648-a368-8baa136ccae5}</Project>
+      <Name>Pwj.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

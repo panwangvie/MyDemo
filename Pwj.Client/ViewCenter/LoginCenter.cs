@@ -1,5 +1,7 @@
-﻿using Pwj.Client.View;
+﻿using GalaSoft.MvvmLight.Messaging;
+using Pwj.Client.View;
 using Pwj.Interfaces;
+using Pwj.Shared.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +20,30 @@ namespace Pwj.Client.ViewCenter
     public class LoginCenter : BaseDialogCenter<LoginWin>, ILoginCenter
     {
         public LoginCenter(ILoginViewModel viewModel) : base(viewModel) { }
+
+        public override void SubscribeMessenger()
+        {
+            Messenger.Default.Register<string>(view, "Snackbar", (arg) =>
+            {
+                App.Current.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    var messageQueue = view.SnackbarThree.MessageQueue;
+                    messageQueue.Enqueue(arg);
+                }));
+            });
+            Messenger.Default.Register<string>(view, "NavigationPage", async (arg) =>
+            {
+                var dialog = NetCoreProvider.ResolveNamed<IMainCenter>("MainCenter");
+                this.UnsubscribeMessenger();
+                view.Close();
+                await dialog.ShowDialog();
+            });
+            base.SubscribeMessenger();
+        }
+
+        public override void UnsubscribeMessenger()
+        {
+            base.UnsubscribeMessenger();
+        }
     }
 }

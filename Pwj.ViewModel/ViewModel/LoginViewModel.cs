@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using Pwj.Interfaces;
+using Pwj.Shared.Common.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +62,7 @@ namespace Pwj.ViewModel.ViewModel
         #endregion
 
         #region Command
+        [TryEx]
         public virtual async void Login()
         {
             if (DialogIsOpen) return;
@@ -69,6 +71,7 @@ namespace Pwj.ViewModel.ViewModel
                 SnackBar("请输入用户名密码!");
                 return;
             }
+            new Exception();
             DialogIsOpen = true;
             // return await new Task<bool>(() => false);
         }

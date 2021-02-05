@@ -2,6 +2,8 @@
 using Pwj.Client.ViewCenter;
 using Pwj.Interfaces;
 using Pwj.Shared.Common;
+using Pwj.Shared.DataInterfaces;
+using Pwj.Shared.DateModel;
 using Pwj.ViewModel.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -41,11 +43,15 @@ namespace Pwj.Client
         private void ConfigureServices()
         {
             var builder = new ContainerBuilder();
-            builder.AddViewModel<LoginViewModel, ILoginViewModel>();
+            //builder.RegisterModule(new InterceptorModule());
+            builder.RegisterType<LoginViewModel>().As<ILoginViewModel>();
+            builder.RegisterType<LoginCenter>().Named(typeof(LoginCenter).Name, typeof(ILoginCenter));
+           
+            builder.RegisterType<FlashLogger>().As<IFLog>().SingleInstance();//
 
 
-
-            builder.AddViewCenter<LoginCenter,ILoginCenter>();
+            //builder.AddViewService<FlashLogger, IFLog>();
+            //builder.AddViewCenter<LoginCenter,ILoginCenter>();
 
             NetCoreProvider.RegisterServiceLocator(builder.Build());
 

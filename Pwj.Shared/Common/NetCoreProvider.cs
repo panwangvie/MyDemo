@@ -29,7 +29,7 @@ namespace Pwj.Shared.Common
             if (!Instance.IsRegistered<T>())
                 new ArgumentNullException(nameof(T));
 
-            return Instance.Resolve<T>();
+            return (T)Instance.Resolve<T>().BaseAop(typeof(T));
         }
 
         public static T ResolveNamed<T>(string typeName)
@@ -37,20 +37,8 @@ namespace Pwj.Shared.Common
             if (string.IsNullOrWhiteSpace(typeName))
                 new ArgumentNullException(nameof(T));
 
-            return Instance.ResolveNamed<T>(typeName);
+            return (T)Instance.ResolveNamed<T>(typeName).BaseAop(typeof(T));
         }
 
-        public static T ResolveAop<T>()
-        {
-            return (T)Resolve<T>().AOP(typeof(T));
-            
-        }
-
-        public static T ResolveNamedAop<T>(string typeName)
-        {
-            
-
-            return (T)ResolveNamed<T>(typeName).AOP(typeof(T));
-        }
     }
 }
