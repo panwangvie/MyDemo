@@ -122,6 +122,9 @@
     <Compile Include="View\LoginWin.xaml.cs">
       <DependentUpon>LoginWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -135,6 +138,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\LoginWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,6 +184,10 @@
     <ProjectReference Include="..\Pwj.Interfaces\Pwj.Interfaces.csproj">
       <Project>{cd9107c7-3403-4cb0-b616-e340c1a6d896}</Project>
       <Name>Pwj.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pwj.Model\Pwj.Model.csproj">
+      <Project>{c470b90d-6113-42ee-ba0f-f4ebf1960424}</Project>
+      <Name>Pwj.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pwj.Service\Pwj.Service.csproj">
       <Project>{cfff2f1b-573a-4a48-84f0-b9dd1b0c5394}</Project>

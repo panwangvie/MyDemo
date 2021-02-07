@@ -14,7 +14,7 @@ namespace Pwj.Shared.Dto
     /// 最后修改者  ：panwangji
     /// 最后修改日期：2021/2/5 11:20:04 
     /// </summary>
-    public class UerInfoDto
+    public class UserInfoDto
     {
         public User User { get; set; }
 
