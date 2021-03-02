@@ -1,5 +1,6 @@
 ﻿
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace WpfGDI
 {
@@ -67,6 +68,76 @@ namespace WpfGDI
             set
             {
                 fontColor = value;
+            }
+        }
+        private Color gradientColor1;       // 渐变颜色1
+        private Color gradientColor2;       // 渐变颜色2
+        private BitmapImage overlayImage;   // 叠加图片
+        private Color strokeColor;          // 描边颜色
+        private int strokeColorLength;      // 描边深度
+
+        public Color GradientColor1
+        {
+            get
+            {
+                return gradientColor1;
+            }
+
+            set
+            {
+                gradientColor1 = value;
+            }
+        }
+
+        public Color GradientColor2
+        {
+            get
+            {
+                return gradientColor2;
+            }
+
+            set
+            {
+                gradientColor2 = value;
+            }
+        }
+
+        public BitmapImage OverlayImage
+        {
+            get
+            {
+                return overlayImage;
+            }
+
+            set
+            {
+                overlayImage = value;
+            }
+        }
+
+        public Color StrokeColor
+        {
+            get
+            {
+                return strokeColor;
+            }
+
+            set
+            {
+                strokeColor = value;
+            }
+        }
+
+        public int StrokeColorLength
+        {
+            get
+            {
+                return strokeColorLength;
+            }
+
+            set
+            {
+                strokeColorLength = value;
             }
         }
 
