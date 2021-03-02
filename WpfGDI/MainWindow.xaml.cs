@@ -210,7 +210,12 @@ namespace WpfGDI
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ImageOriginal"></param>
+        /// <param name="format"></param>
+        /// <returns></returns>
         public static BitmapImage BitmapToBitmapImage(System.Drawing.Bitmap ImageOriginal, System.Drawing.Imaging.ImageFormat format)
         {
 
