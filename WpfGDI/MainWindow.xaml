@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfGDI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfGDI"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="GDI+文本绘制" Height="768" Width="1280" Loaded="Window_Loaded">
+    <Grid Background="#f0f0f0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="mainCanvas" Grid.Column="0" Background="White" Width="960" Height="720" Margin="10,5,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                ClipToBounds="True">
+            <Image x:Name="imgFont"></Image>
+        </Canvas>
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="文本" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <TextBox x:Name="tbFontText" Grid.Row="0" Grid.Column="1" Height="26" Width="180" VerticalAlignment="Center" HorizontalAlignment="Left" TextChanged="tbFontText_TextChanged"></TextBox>
+            <Label Grid.Row="1" Grid.Column="0" Content="选择字体" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <ComboBox x:Name="cbFontName" Grid.Row="1" Grid.Column="1" Height="26" Width="180" VerticalAlignment="Center" HorizontalAlignment="Left" SelectionChanged="cbFontName_SelectionChanged"></ComboBox>
+            <Label Grid.Row="2" Grid.Column="0" Content="字体大小" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <WindowsFormsHost Grid.Row="2" Grid.Column="1" Height="26" Width="180" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <wf:NumericUpDown x:Name="numFontSize" Value="50" Maximum="1000" Minimum="1" ValueChanged="numFontSize_ValueChanged"/>
+            </WindowsFormsHost>
+            
+            <Label Grid.Row="3" Grid.Column="0" Content="字体颜色" VerticalAlignment="Center" HorizontalAlignment="Left"></Label>
+            <Rectangle x:Name="rFontColor" Grid.Row="3" Grid.Column="1" Fill="Black" Width="30" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left" MouseLeftButtonDown="rFontColor_MouseLeftButtonDown"></Rectangle>
+        </Grid>
+    </Grid>
+
+ 
+</Window>
