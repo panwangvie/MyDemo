@@ -246,7 +246,11 @@ namespace WpfGDI
             }
             return bitmapImage;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path">路径</param>
+        /// <returns></returns>
         public static BitmapImage LoadBitmapImageByPath(string path)
         {
             BitmapImage bitmapImage = new BitmapImage();
