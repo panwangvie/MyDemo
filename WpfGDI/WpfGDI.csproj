@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -64,6 +66,30 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CtrlBrush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CtrlDrawding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CtrlGDI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CtrlGeometry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CtrlShape.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CtrlWriteableBitmap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,13 +101,33 @@
     <Compile Include="ColorSelectorWindow.xaml.cs">
       <DependentUpon>ColorSelectorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CtrlBrush.xaml.cs">
+      <DependentUpon>CtrlBrush.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlDrawding.xaml.cs">
+      <DependentUpon>CtrlDrawding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlGDI.xaml.cs">
+      <DependentUpon>CtrlGDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlGeometry.xaml.cs">
+      <DependentUpon>CtrlGeometry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlShape.xaml.cs">
+      <DependentUpon>CtrlShape.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CtrlWriteableBitmap.xaml.cs">
+      <DependentUpon>CtrlWriteableBitmap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FontItem.cs" />
+    <Compile Include="ImageProcessingEffect.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -106,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WPF绘图.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

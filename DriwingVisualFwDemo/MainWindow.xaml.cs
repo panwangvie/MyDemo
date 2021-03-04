@@ -24,6 +24,7 @@ namespace DriwingVisualFwDemo
         public MainWindow()
         {
             InitializeComponent();
+
             DrawingVisual visualx = new DrawingVisual();
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 

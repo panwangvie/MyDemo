@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="WpfGDI.CtrlShape"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfGDI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="myGrid" Background="White">
+        <Ellipse Width="100" Height="100" Fill="Yellow" StrokeThickness="2" Stroke="Green"></Ellipse>
+        <Line SnapsToDevicePixels="True" X1="0" X2="50" Y1="0" Y2="60" Height="10" Stretch="Fill"></Line>
+        <Polygon Points="3,2 3,2 60,12 50,20 60,80" Fill="Yellow"></Polygon>
+    </Grid>
+</UserControl>
