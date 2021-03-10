@@ -1,0 +1,32 @@
+﻿<Window x:Class="WinfowsFormsHostTop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WinfowsFormsHostTop"
+        xmlns:WinFormHost="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:airspace="clr-namespace:Microsoft.DwayneNeed.Interop;assembly=Microsoft.DwayneNeed"
+        xmlns:WinFormControls="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Margin="10">
+        <airspace:AirspaceDecorator
+			Name="airspace"
+			AirspaceMode="Redirect"
+			IsInputRedirectionEnabled="True"
+			IsOutputRedirectionEnabled="True"
+			Panel.ZIndex="10">
+            <WinFormHost:WindowsFormsHost Background="Transparent">
+            <WinFormControls:PictureBox x:Name="pictureBox"/>
+            </WinFormHost:WindowsFormsHost>
+        </airspace:AirspaceDecorator>
+        <!--<WindowsFormsHost  Background="Transparent">
+            <ElementHost>
+            </ElementHost>
+        </WindowsFormsHost>-->
+        <!--<local:PopupEx AllowsTransparency="True" IsOpen="True" HorizontalOffset="25" VerticalOffset="-60">
+            <Image x:Name="imgPlay" Width="98" Height="48" Source="pack://application:,,,/Resources/cat.jpg" Stretch="Fill"></Image>
+        </local:PopupEx>-->
+    </Grid>
+
+</Window>
