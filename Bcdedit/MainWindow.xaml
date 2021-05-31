@@ -1,0 +1,33 @@
+﻿<Window x:Class="Bcdedit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bcdedit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+
+            <Button Name="BtnQuery" Height="30" Width="100" Content="查询enum all"  Click="BtnQuery_OnClick"  ></Button>
+            <Button Name="BtnShutdown" Height="30" Width="60" Content="关机"  Click="BtnShutdown_OnClick"  ></Button>
+            <Button Name="BtnRes" Height="30" Width="60" Content="重启"  Click="BtnRes_OnClick"  ></Button>
+            <Button Name="BtnSwitching" Height="30" Width="60" Content="切换引导" Click="BtnSwitching_OnClick"  ></Button>
+            <Button Name="BtnSwitchingRes" Height="30" Width="100" Content="切换并重启"  Click="BtnSwitchingRes_OnClick"  ></Button>
+            <Button Name="BtnWin" Height="30" Width="60" Content="Windows"  Click="BtnWin_OnClick"  ></Button>
+            <Button Name="BtnAnd" Height="30" Width="60" Content="Android"  Click="BtnAnd_OnClick"  ></Button>
+            <Button Name="BtnTest" Height="30" Width="60" Content="Test"  Click="BtnTest_OnClick"></Button>
+            <Button Name="BtnTest2" Height="30" Width="60" Content="Test2"  Click="BtnTest2_OnClick"></Button>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <TextBox  Name="tbCmd" Height="36" PreviewKeyDown="UIElement_OnPreviewKeyDown"></TextBox> 
+            <TextBox Name="tbRes" Height="300"> </TextBox>
+        </StackPanel>
+    </Grid>
+</Window>

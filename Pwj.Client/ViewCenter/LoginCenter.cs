@@ -27,8 +27,8 @@ namespace Pwj.Client.ViewCenter
             {
                 App.Current.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    var messageQueue = view.SnackbarThree.MessageQueue;
-                    messageQueue.Enqueue(arg);
+                    //var messageQueue = view.SnackbarThree.MessageQueue;
+                    //messageQueue.Enqueue(arg);
                 }));
             });
             Messenger.Default.Register<string>(view, "NavigationPage", async (arg) =>

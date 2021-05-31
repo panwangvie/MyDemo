@@ -1,0 +1,21 @@
+﻿<Window x:Class="MediaDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MediaDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+        <MediaElement Name="media" LoadedBehavior="Manual" UnloadedBehavior="Manual" Source="G:\Videos\b_z9WUK3iPjsx01597688518.mp4"></MediaElement>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Name="open" Content="打开"  Click="Open_OnClick"></Button>
+            <Button Name="start" Content="暂停" Click="Start_OnClick"></Button>
+            <Button Name="stop" Content="停止"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

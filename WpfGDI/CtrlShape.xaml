@@ -10,5 +10,39 @@
         <Ellipse Width="100" Height="100" Fill="Yellow" StrokeThickness="2" Stroke="Green"></Ellipse>
         <Line SnapsToDevicePixels="True" X1="0" X2="50" Y1="0" Y2="60" Height="10" Stretch="Fill"></Line>
         <Polygon Points="3,2 3,2 60,12 50,20 60,80" Fill="Yellow"></Polygon>
+        <Canvas>
+            <Line Stroke="Blue" StrokeThickness="5" X1="10" Y1="10" X2="100" Y2="10"/>
+            <Path Stroke="Blue" StrokeThickness="5">
+                <Path.Data>
+                    <LineGeometry StartPoint="10,20" EndPoint="100,20"/>
+                </Path.Data>
+            </Path>
+            <Rectangle Stroke="Blue" Width="30" Height="20" Canvas.Top="30" Canvas.Left="10"/>
+            <Path Stroke="Blue">
+                <Path.Data>
+                    <RectangleGeometry Rect="50,30,30,20"/>
+                </Path.Data>
+            </Path>
+            <Ellipse Stroke="Blue" Fill="DarkSlateGray" Width="20" Height="20" Canvas.Top="60" Canvas.Left="10"/>
+            <Path Stroke="Blue" Fill="AntiqueWhite">
+                <Path.Data>
+                    <EllipseGeometry RadiusX="10" RadiusY="10" Center="60,70"/>
+                </Path.Data>
+            </Path>
+            <Path Stroke="Black" StrokeThickness="0" Fill="Blue" Canvas.Top="90" Canvas.Left="10">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigure StartPoint="15,0" IsClosed="True">
+                                <LineSegment Point="0,15" />
+                                <LineSegment Point="30,30" />
+                            </PathFigure>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+
+
+        </Canvas>
     </Grid>
 </UserControl>

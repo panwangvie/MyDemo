@@ -8,25 +8,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-       
+
         <VisualBrush x:Key="test" TileMode="Tile" Opacity="0.8">
-            
+
             <VisualBrush.Visual>
-                
+
                 <StackPanel>
-                    
+
                     <TextBlock Foreground="Gold">
                          唧唧复唧唧
-</TextBlock>
+                    </TextBlock>
                     <TextBlock Foreground="LightBlue">
                         木兰开飞机
-</TextBlock>
-                     
+                    </TextBlock>
+
                     <TextBlock Foreground="LightGray">
-</TextBlock>
+                    </TextBlock>
                     <TextBlock Foreground="Pink">
                         波音747
-</TextBlock>
+                    </TextBlock>
                 </StackPanel>
             </VisualBrush.Visual>
         </VisualBrush>
@@ -34,7 +34,17 @@
     <Grid>
         <Button Content="我是超大按钮" Height="213" HorizontalAlignment="Left" Margin="32,34,0,0" Name="button1" 
               VerticalAlignment="Top" Width="414" Background="{StaticResource ResourceKey=test}"/>
+        <Border Background="Red" Margin="448,259,236,73" RenderTransformOrigin="0.5,0.5" CornerRadius="100 100 0 0" >
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <RotateTransform Angle="41.264"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+        </Border>
+
     </Grid>
 
- 
+
 </UserControl>

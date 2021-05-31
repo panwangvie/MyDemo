@@ -3,3 +3,25 @@
 ################################################################################
 
 /Autofac.IModel/bin/Debug
+/AOP.AspectInjector/obj
+/Autofac.IViewModel/obj
+/Autofac.IViewModel/bin/Debug
+/Autofac.Model/bin/Debug
+/Autofac.Model/obj
+/Autofac.ViewModel/bin/Debug
+/Autofac.ViewModel/obj
+/Bcdedit/bin
+/Bcdedit/obj
+/WPF.IOC.NetCore/obj/Debug/netcoreapp3.0
+/packages
+/StopFiled/obj/x64/Debug
+/WinfowsFormsHostTop/obj/x64/Debug
+/WPF.IOC.NetCore/obj/x64/Debug/netcoreapp3.0
+/Pwj.ViewModel/obj/x64/Debug
+/Pwj.Shared/obj/x64/Debug
+/Pwj.Model/obj/x64/Debug/netstandard2.1
+/Pwj.BaseControl/obj/x64/Debug
+/MyReflection/obj/x64/Debug/netcoreapp3.1
+/MyPing/obj/x64/Debug
+/ImageConvert/obj/x64/Debug
+/Autofac.IModel/obj/x64/Debug

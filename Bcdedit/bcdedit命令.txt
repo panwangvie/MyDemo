@@ -1,0 +1,3 @@
+bcdedit /enum all
+bcdedit /copy {bootmgr} -d "os-windows"
+bcdedit /copy delete {5c0a55b8-4a93-11eb-a923-9c7bef4da3a7}
