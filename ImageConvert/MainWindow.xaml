@@ -19,8 +19,6 @@
         <Image Name="Source" Grid.Column="0"></Image>
         <Image Name="GotoImage" Grid.Column="0"></Image>
         <Button Content="选择" Click="ButtonBase_OnClick" Grid.Row="1"></Button>
-        <ListBox Name="imageFormt" Grid.Row="1" Grid.Column="1" Selected="Selector_OnSelected">
    
-        </ListBox>
     </Grid>
 </Window>
