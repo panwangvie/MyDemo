@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-F:\DemoCode\MyDemo\WpfGDI\obj\x64\Debug\
+E:\Code\Samples\MyDemo\WpfGDI\obj\x64\Debug\
 WpfGDI
 none
 false
 DEBUG;TRACE
-F:\DemoCode\MyDemo\WpfGDI\App.xaml
-8542141385
+E:\Code\Samples\MyDemo\WpfGDI\App.xaml
+8-1631436306
 
-15102721405
-18930845998
+15-1893179250
+18-906609214
 ColorSelectorWindow.xaml;CtrlBrush.xaml;CtrlDrawding.xaml;CtrlGDI.xaml;CtrlGeometry.xaml;CtrlShape.xaml;CtrlWriteableBitmap.xaml;MainWindow.xaml;
 
 False
