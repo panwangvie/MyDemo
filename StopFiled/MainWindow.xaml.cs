@@ -26,6 +26,6 @@ namespace StopFiled
             InitializeComponent();
             this.DataContext = vMMianWindow;
         }
-        VMMianWindow vMMianWindow = new VMMianWindow();
+        MianWindowViewModel vMMianWindow = new MianWindowViewModel();
     }
 }

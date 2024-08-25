@@ -33,10 +33,10 @@ namespace LoadHtml
 
 
             //第一点——加载网页结构,Html Agility Pack封装了加载内容的方法，使用doc.Load(arguments),具有多种重载方式，以下列举官网的三个实例
-            //LoadDocment();
+            LoadDocment();
 
             //第二点——解析网页结构，转变为符合需求的数据实体
-            //ParsingWebStructure();
+            ParsingWebStructure();
 
             //第三点——保存数据实体，转变为符合需求的数据实体
             SavaData();
