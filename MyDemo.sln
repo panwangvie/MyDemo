@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29509.3
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDemo", "MyDemo\MyDemo.csproj", "{6F412E4A-6D5A-40CB-9CFC-140D36EA1209}"
 EndProject
@@ -49,19 +49,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyReflection", "MyReflectio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OtherDemo", "OtherDemo", "{A3E0E470-B556-451B-A919-10DBDBB05333}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UWP", "UWP", "{20CAF63E-274F-4A90-BEF7-57A1A0A7AB5C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pwj.Model", "Pwj.Model\Pwj.Model.csproj", "{C470B90D-6113-42EE-BA0F-F4EBF1960424}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "绘图", "绘图", "{5788FA21-0B9E-4D36-B006-E0D7C317B767}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuseWrite", "MuseWrite\MuseWrite.csproj", "{DAB256D5-E8E4-47BD-90F8-AF792C9803F9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "爬虫", "爬虫", "{FE85743E-EB16-43EE-9FD0-41283E08AD37}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Html", "Html", "{FE85743E-EB16-43EE-9FD0-41283E08AD37}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadHtml", "LoadHtml\LoadHtml.csproj", "{EDC7A28F-17E6-4B84-AC21-77F6C6DB9519}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "二维码", "二维码", "{5FA693E1-C162-40A5-9B69-0EF80D000756}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DriwingVisualDemo", "DriwingVisualDemo\DriwingVisualDemo.csproj", "{30C5555D-0BDD-42F0-BC4B-8F4A89CC15D1}"
 EndProject
